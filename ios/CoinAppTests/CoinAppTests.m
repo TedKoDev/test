@@ -7,19 +7,19 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface testTests : XCTestCase
+@interface CoinAppTests : XCTestCase
 
 @end
 
-@implementation testTests
+@implementation CoinAppTests
 
-- (BOOL)findSubviewInView:(UIView *)view matching:(BOOL (^)(UIView *view))test
+- (BOOL)findSubviewInView:(UIView *)view matching:(BOOL (^)(UIView *view))CoinApp
 {
-  if (test(view)) {
+  if (CoinApp(view)) {
     return YES;
   }
   for (UIView *subview in [view subviews]) {
-    if ([self findSubviewInView:subview matching:test]) {
+    if ([self findSubviewInView:subview matching:CoinApp]) {
       return YES;
     }
   }
