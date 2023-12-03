@@ -73,9 +73,9 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.test"
+    namespace "com.shinandted.coinapp"
     defaultConfig {
-        applicationId "com.test"
+        applicationId "com.shinandted.coinapp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

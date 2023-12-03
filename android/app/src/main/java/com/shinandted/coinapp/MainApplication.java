@@ -1,4 +1,4 @@
-package com.test;
+package com.shinandted.coinapp;
 
 import android.app.Application;
 import com.facebook.react.PackageList;
