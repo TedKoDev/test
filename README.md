@@ -45,3 +45,10 @@ yarn add @react-navigation/material-top-tabs
 yarn add react-native-gesture-handler react-native-reanimated @react-native-community/masked-view
 
 ```
+
+### 4. react-query 설치 https://react-query.tanstack.com/overview
+
+```
+yarn add react-query
+
+```
