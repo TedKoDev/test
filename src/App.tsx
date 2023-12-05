@@ -4,16 +4,19 @@ import {NavigationContainer} from '@react-navigation/native';
 
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Homescreen from './screens/homescreen';
+import Detailscreen from './screens/detailscreen';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+import AppNavigation from './navigators/app-navigation';
 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="HomeScreen" component={Homescreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <React.Fragment>
+      <SafeAreaProvider>
+        <AppNavigation />;
+      </SafeAreaProvider>
+    </React.Fragment>
   );
 };
 
