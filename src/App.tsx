@@ -14,7 +14,7 @@ const App = () => {
   return (
     <React.Fragment>
       <SafeAreaProvider>
-        <AppNavigation />;
+        <AppNavigation />
       </SafeAreaProvider>
     </React.Fragment>
   );

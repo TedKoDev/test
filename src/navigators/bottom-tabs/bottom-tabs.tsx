@@ -2,6 +2,11 @@
 import React, {useState} from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {useNavigationState} from '@react-navigation/native';
+import NAMES from '../Routes/Index';
+import Icon from 'react-native-vector-icons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+
+import {Text, View} from 'react-native';
 
 const Tabs = createBottomTabNavigator();
 
@@ -13,38 +18,46 @@ const BottomTabNavigator = () => {
       useState<boolean>(false),
     [showPublishActions, setShowPublishActions] = useState<boolean>(false);
 
-  // 하단 탭 네비게이터 반환 (Return Bottom Tab Navigator)
-
   const active =
     showPublishActions || showPublishPostModal || showPublishMarketListingModal;
 
+  const FirstScreen = () => {
+    return (
+      <View>
+        <Text>hello</Text>
+      </View>
+    );
+  };
+  const SecondScreen = () => {
+    return (
+      <View>
+        <Text>SecondScreen</Text>
+      </View>
+    );
+  };
+
   return (
-    <>
-      <Tabs.Navigator
-        screenOptions={tabScreenOptions}
-        initialRouteName={NAMES.HOME_TAB_STACK}>
-        <Tabs.Screen
-          name={NAMES.HOME_TAB_STACK}
-          component={HomeStackNavigator}
-          options={tabOptions(({focused}) => (
-            <TabBarIcon
-              focused={active ? false : focused}
-              name="Home"
-              title={t('home')}
-            />
-          ))}
-        />
-        <Tabs.Screen
-          name={NAMES.MARKET_TAB_STACK}
-          component={MarketStackNavigator}
-          options={tabOptions(({focused}: {focused: boolean}) => (
-            <TabBarIcon focused={focused} name="Market" title={t('market')} />
-          ))}
-        />
-      </Tabs.Navigator>
-    </>
+    <Tabs.Navigator>
+      <Tabs.Screen
+        name="first"
+        component={FirstScreen}
+        options={{
+          tabBarIcon: ({color, size}) => (
+            <MaterialIcons name="home" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="second"
+        component={SecondScreen}
+        options={{
+          tabBarIcon: ({color, size}) => (
+            <MaterialIcons name="settings" color={color} size={size} />
+          ),
+        }}
+      />
+    </Tabs.Navigator>
   );
 };
 
-// 컴포넌트 내보내기 (Export Component)
 export default BottomTabNavigator;
